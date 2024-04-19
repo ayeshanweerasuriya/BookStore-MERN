@@ -1,2 +1,3 @@
 export const PORT = 5555;
-export const mongoDBURL = "<<I need to paste the connection string here>>";
+export const mongoDBURL =
+  "mongodb+srv://admin:admin@bookstore-mern.lyfziok.mongodb.net/?retryWrites=true&w=majority&appName=BookStore-MERN";

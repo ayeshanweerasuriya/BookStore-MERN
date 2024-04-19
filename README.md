@@ -1,4 +1,10 @@
 ```bash
+npm run dev
+```
+
+To run the server
+
+```bash
 npm init -y
 ```
 
