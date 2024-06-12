@@ -1,9 +1,9 @@
-import express, { request, response } from "express";
-import { PORT, mongoDBURL } from "./config.js";
+import express from "express";
 import mongoose from "mongoose";
-import { Book } from "./models/bookModel.js";
+import dotenv from "dotenv";
 import booksRoute from "./routes/booksRoute.js";
 
+dotenv.config();
 const app = express();
 
 // Middleware for parsing request body
@@ -18,11 +18,11 @@ app.use("/books", booksRoute);
 
 // Connecting database using URL
 mongoose
-  .connect(mongoDBURL)
+  .connect(process.env.MONGO_DB)
   .then(() => {
     console.log("App connected to database");
-    app.listen(PORT, () => {
-      console.log(`App is listening to port: ${PORT}`);
+    app.listen(process.env.PORT, () => {
+      console.log(`App is listening to port: ${process.env.PORT}`);
     });
   })
   .catch((error) => {
